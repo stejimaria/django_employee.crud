@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container mt-5">
+
+        <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">EmployeeId</label>
+                <input type="number" class="form-control" name="i" value="{{employee.empid}}" placeholder="Enter id">
+            </div>
+
+             <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" name="n" value="{{employee.ename}}" placeholder="Enter name">
+            </div>
+
+
+            <div class="mb-3">
+                <label  class="form-label">Age</label>
+                <input type="number" class="form-control" name="a"  value="{{employee.age}}" placeholder="Enter age">
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                <input type="text" class="form-control" name="ad"  value="{{employee.address}}" placeholder="Enter address">
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="e"  value="{{employee.email}}" placeholder="Enter email">
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label">Upload Image</label>
+                <img src=" {{employee.image.url}}" style="height:100px;">>
+                <input class="form-control" type="file" name="im">
+            </div>
+
+
+            <button type="submit" value="Add" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+
+
+{% endblock %}
